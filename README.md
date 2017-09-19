@@ -53,7 +53,7 @@ And use them to configure libraries in `AndroidManifest.xml` and others:
   android:value="@string/GOOGLE_MAPS_API_KEY" />
 ```
 
-Once again keep in mind variables stored in `.env` are published with your code, so do not put anything sensitive there like your app `signingConfigs`.
+**Variables stored in `.env` are published with your code, so DO NOT put anything sensitive there like your app `signingConfigs`.**
 
 
 ### iOS
@@ -103,9 +103,21 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 
 Alternatively, you can set `ENVFILE` before building/running your app. For instance:
 
+On Mac
 ```
 $ ENVFILE=.env.staging react-native run-android
 ```
+
+On Windows (in cmd)
+```
+SET ENVFILE = '.env.staging' && react-native run-android
+```
+
+On Windows (in Powershell)
+```
+$env:ENVFILE=".env.staging"; react-native run-android
+```
+
 
 #### iOS
 
